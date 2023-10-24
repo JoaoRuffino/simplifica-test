@@ -1,0 +1,823 @@
+/*
+    +------------------------------------------------------------------------------------+
+    |                                                                                    |
+    | The purpose of this file is to function as a kind of framework,                    |
+    | as can be seen in the manipulation of Grids in Bootstrap and Tailwind.             |
+    | All page structure issues must be based on this file                               |
+    | (structure.css). Furthermore, it is also possible to work on responsiveness        |
+    | of the site through this file, as it has capable media queries                     |
+    | to adapt the layout to a range of sizes of different devices                       |
+    |                                                                                    |
+    +------------------------------------------------------------------------------------+
+    |                                                                                    |
+    | .f-e ->   Matches the parent element. Be sure to use it to create a                |
+    |           flexible structure with the .row and .col classes.                       |
+    |                                                                                    |
+    | .row ->   Matches the element that has a structure like a line                     |
+    |           Make sure you have a parent element with class                           |
+    |           .f-e before using this class                                             |
+    |                                                                                    |
+    | .col->    Matches the element that has a structure like a column                   |
+    |           Make sure you have a parent element with class                           |
+    |           .f-e before using this class                                             |
+    |                                                                                    |
+    +------------------------------------------------------------------------------------+
+    |                     <----EXPLANATION OF SIZE ACRONYMS---->                         |
+    |                                                                                    |
+    | *mc -> Means MICRO and and must be used in device layouts with a                   |
+    |        min-width of 300px.                                                         |
+    |                                                                                    |
+    | *sm -> Means SMALL and and must be used in device layouts with a                   |
+    |        min-width of 768px.                                                         |
+    |                                                                                    |
+    | *md -> Means MEDIUM and and must be used in device layouts with a                  |
+    |        min-width of 992px.                                                         |
+    |                                                                                    |
+    | *lg -> Means LARGE and and must be used in device layouts with a                   |
+    |        min-width of 1200px.                                                        |
+    |                                                                                    |
+    +------------------------------------------------------------------------------------+
+
+    <----TABLE WITH RELATIONSHIPS BETWEEN DEVICE'S SIZES---->
+
+    +----------+-----------+-----------+
+    | ACRONYMS | MIN-WIDTH | MAX-WIDTH |
+    +----------+-----------+-----------+
+    | *mc      |   300px   |  ~767px   |
+    | *sm      |   768px   |  ~991px   |
+    | *md      |   992px   |  ~1999px  |
+    | *lg      |   1200px  |  Infinite |
+    +----------+-----------+-----------+
+
+             
+*/
+
+
+
+/*
+    +-------------------------------------+
+    |                                     |
+    |    The idea of ​​using box-sizing,    |
+    |    allows size calculation          |
+    |    be done correctly, validating    |
+    |    the size and width set by the    |
+    |    browser.                         |                        
+    |                                     |
+    +-------------------------------------+
+*/
+
+*{
+    box-sizing: border-box;
+  
+
+    /* EVERYTHING THAT CAN BE SET IN THE ENTIRE HTML
+       WE WILL PUT IT HERE!!!!                    */
+}
+
+/*----FATHER ELEMENT----*/
+.f-e{
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/*----ROW ELEMENT----*/
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+}
+
+/*----COLUMN ELEMENT----*/
+.col{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+    height: 100%;
+
+}
+
+/*----SIZES----*/
+.w-auto {width: auto;}
+.w-min {width: min-content;}
+.w-max {width: max-content;}
+.w-0 {width: 0;}
+.w-1 {width: 8.3%;}
+.w-2 {width: 16.7%;}
+.w-3 {width: 25%;}
+.w-4 {width: 33.3%;}
+.w-5 {width: 41.7%;}
+.w-6 {width: 50%;}
+.w-7 {width: 58.3%;}
+.w-8 {width: 66.7%;}
+.w-9 {width: 75%;}
+.w-10 {width: 83.3%;}
+.w-11 {width: 91.7%;}
+.w-12 {width: 100%;}
+
+/*----HEIGHTS----*/
+.h-auto {height: auto;}
+.h-min {height: min-content;}
+.h-max {height: max-content;}
+.h-0 {height: 0;}
+.h-1 {height: 8.3%;}
+.h-2 {height: 16.7%;}
+.h-3 {height: 25%;}
+.h-4 {height: 33.3%;}
+.h-5 {height: 41.7%;}
+.h-6 {height: 50%;}
+.h-7 {height: 58.3%;}
+.h-8 {height: 66.7%;}
+.h-9 {height: 75%;}
+.h-10 {height: 83.3%;}
+.h-11 {height: 91.7%;}
+.h-12 {height: 100%;}
+
+
+/*----JUSTIFY CONTENT----*/
+.j-start {justify-content: flex-start;}
+.j-center {justify-content: center;}
+.j-mend {justify-content: flex-end;}
+.j-mbetween {justify-content: space-between;}
+.j-maround {justify-content: space-around;}
+.j-mevenly {justify-content: space-evenly;}
+
+/*----ALIGN ITEMS----*/
+.a-start {align-items: flex-start;}
+.a-center {align-items: center;}
+.a-end {align-items: flex-end;}
+.a-stretch {align-items: stretch;}
+.a-baseline{align-items: baseline;}
+
+/*----ORDER OF DISPLAY ELEMENTS----*/
+.o-1{order: 1;}
+.o-2{order: 2;}
+.o-3{order: 3;}
+.o-4{order: 4;}
+.o-5{order: 5;}
+.o-6{order: 6;}
+.o-7{order: 7;}
+.o-8{order: 8;}
+.o-9{order: 9;}
+.o-10{order: 10;}
+.o-11{order: 11;}
+.o-12{order: 12;}
+
+/*----GAP BETWEEN ELEMENTS----*/
+.g-1 {gap: 5px;}
+.g-2 {gap: 10px;}
+.g-3 {gap: 15px;}
+.g-4 {gap: 20px;}
+.g-5 {gap: 25px;}
+.g-6 {gap: 30px;}
+.g-7 {gap: 35px;}
+.g-8 {gap: 40px;}
+.g-9 {gap: 45px;}
+.g-10 {gap: 50px;}
+.g-11 {gap: 55px;}
+.g-12 {gap: 60px;}
+
+/*----ELEMENTOS MARGIN----*/
+.m-1{margin: 8px;}
+.m-2{margin: 16px;}
+.m-3{margin: 24px;}
+.m-4{margin: 32px;}
+.m-5{margin: 40px;}
+.m-6{margin: 48px;}
+.m-7{margin: 56px;}
+.m-8{margin: 64px;}
+.m-9{margin: 72px;}
+.m-10{margin: 80px;}
+.m-11{margin: 88px;}
+.m-12{margin: 96px;}
+
+/*----ELEMENTOS PADDING----*/
+.p-1 {padding: 5px;}
+.p-2 {padding: 10px;}
+.p-3 {padding: 15px;}
+.p-4 {padding: 20px;}
+.p-5 {padding: 25px;}
+.p-6 {padding: 30px;}
+.p-7 {padding: 35px;}
+.p-8 {padding: 40px;}
+.p-9 {padding: 45px;}
+.p-10 {padding: 50px;}
+.p-11 {padding: 55px;}
+.p-12 {padding: 60px;}
+
+/*----LINE-HEIGHT---*/
+
+.lh1 {line-height: 15px;}
+.lh2{line-height: 20px;}
+.lh3{line-height: 25px;}
+.lh4{line-height: 35px;}
+.lh5{line-height: 45px;}
+
+/*----FONT-SIZES----*/
+
+.fs-s{font-size: 1.05rem;}
+.fs-m{font-size: 1.25rem;}
+.fs-mx{font-size: 1.5rem;}
+.fs-l{font-size: 1.75rem;}
+.fs-xl{font-size: 2.0rem;}
+.fs-xxl{font-size: 2.5rem;}
+
+@media only screen and (min-width: 300px){
+    /*----FATHER ELEMENT FOR MOST SMARTPHONES- (MICRO)----*/
+    .f-e-mc{
+        display: block;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*----ROW ELEMENT FOR MOST SMARTPHONES- (MICRO)----*/
+    .row-mc{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+        height: max-content;
+    }
+
+    /*----COLUMN ELEMENT FOR MOST SMARTPHONES- (MICRO)----*/
+    .col-mc{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: max-content;
+        height: 100%;
+
+    }
+
+    /*----WIDTHS FOR MOST SMARTPHONES- (MICRO)----*/
+    .w-auto-mc {width: auto;}
+    .w-min-mc {width: min-content;}
+    .w-max-mc {width: max-content;}
+    .w-0-mc{width: 0;}
+    .w-1-mc{width: 8.3%;}
+    .w-2-mc{width: 16.7%;}
+    .w-3-mc{width: 25%;}
+    .w-4-mc{width: 33.3%;}
+    .w-5-mc{width: 41.7%;}
+    .w-6-mc{width: 50%;}
+    .w-7-mc{width: 58.3%;}
+    .w-8-mc{width: 66.7%;}
+    .w-9-mc{width: 75%;}
+    .w-10-mc {width: 83.3%;}
+    .w-11-mc {width: 91.7%;}
+    .w-12-mc {width: 100%;}
+
+    /*----HEIGHTS FOR MOST SMARTPHONES- (MICRO)----*/
+    .h-auto-mc {height: auto;}
+    .h-min-mc {height: min-content;}
+    .h-max-mc {height: max-content;}
+    .h-0-mc {height: 0;}
+    .h-1-mc {height: 8.3%;}
+    .h-2-mc {height: 16.7%;}
+    .h-3-mc {height: 25%;}
+    .h-4-mc {height: 33.3%;}
+    .h-5-mc {height: 41.7%;}
+    .h-6-mc {height: 50%;}
+    .h-7-mc {height: 58.3%;}
+    .h-8-mc {height: 66.7%;}
+    .h-9-mc {height: 75%;}
+    .h-10-mc {height: 83.3%;}
+    .h-11-mc {height: 91.7%;}
+    .h-12-mc {height: 100%;}
+
+    /*----JUSTIFY CONTENT FOR MOST SMARTPHONES- (MICRO)----*/
+    .j-start-mc {justify-content: flex-start;}
+    .j-center-mc {justify-content: center;}
+    .j-mend-mc {justify-content: flex-end;}
+    .j-mbetween-mc {justify-content: space-between;}
+    .j-maround-mc {justify-content: space-around;}
+    .j-mevenly-mc {justify-content: space-evenly;}
+
+    /*----ALIGN ITEMS FOR MOST SMARTPHONES- (MICRO)----*/
+    .a-start-mc {align-items: flex-start;}
+    .a-center-mc {align-items: center;}
+    .a-end-mc {align-items: flex-end;}
+    .a-stretch-mc {align-items: stretch;}
+    .a-baseline-mc{align-items: baseline;}
+
+    /*----ORDER OF DISPLAY ELEMENTS FOR MOST SMARTPHONES- (MICRO)----*/
+    .o-1-mc{order: 1;}
+    .o-2-mc{order: 2;}
+    .o-3-mc{order: 3;}
+    .o-4-mc{order: 4;}
+    .o-5-mc{order: 5;}
+    .o-6-mc{order: 6;}
+    .o-7-mc{order: 7;}
+    .o-8-mc{order: 8;}
+    .o-9-mc{order: 9;}
+    .o-10-mc{order: 10;}
+    .o-11-mc{order: 11;}
+    .o-12-mc{order: 12;}
+
+    /*----GAP BETWEEN ELEMENTS FOR MOST SMARTPHONES- (MICRO)----*/
+    .g-1-mc {gap: 5px;}
+    .g-2-mc {gap: 10px;}
+    .g-3-mc {gap: 15px;}
+    .g-4-mc {gap: 20px;}
+    .g-5-mc {gap: 25px;}
+    .g-6-mc {gap: 30px;}
+    .g-7-mc {gap: 35px;}
+    .g-8-mc {gap: 40px;}
+    .g-9-mc {gap: 45px;}
+    .g-10-mc {gap: 50px;}
+    .g-11-mc {gap: 55px;}
+    .g-12-mc {gap: 60px;}
+
+    /*----ELEMENTS MARGIN FOR MOST SMARTPHONES- (MICRO)----*/
+    .m-1-mc{margin: 8px;}
+    .m-2-mc{margin: 16px;}
+    .m-3-mc{margin: 24px;}
+    .m-4-mc{margin: 32px;}
+    .m-5-mc{margin: 40px;}
+    .m-6-mc{margin: 48px;}
+    .m-7-mc{margin: 56px;}
+    .m-8-mc{margin: 64px;}
+    .m-9-mc{margin: 72px;}
+    .m-10-mc{margin: 80px;}
+    .m-11-mc{margin: 88px;}
+    .m-12-mc{margin: 96px;}
+
+    /*----ELEMENTS PADDING FOR MOST SMARTPHONES- (MICRO)----*/
+    .p-1-mc {padding: 5px;}
+    .p-2-mc {padding: 10px;}
+    .p-3-mc {padding: 15px;}
+    .p-4-mc {padding: 20px;}
+    .p-5-mc {padding: 25px;}
+    .p-6-mc {padding: 30px;}
+    .p-7-mc {padding: 35px;}
+    .p-8-mc {padding: 40px;}
+    .p-9-mc {padding: 45px;}
+    .p-10-mc {padding: 50px;}
+    .p-11-mc {padding: 55px;}
+    .p-12-mc {padding: 60px;}
+
+    /*----LINE-HEIGHT FOR MOST SMARTPHONES- (MICRO)---*/
+
+    .lh1-mc {line-height: 15px;}
+    .lh2-mc{line-height: 20px;}
+    .lh3-mc{line-height: 25px;}
+    .lh4-mc{line-height: 35px;}
+    .lh5-mc{line-height: 45px;}
+
+}
+
+@media only screen and (min-width: 768px){
+    /*----FATHER ELEMENT FOR TABLETS - (SMALL)----*/
+    .f-e-sm{
+        display: block;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*----ROW ELEMENT FOR TABLETS - (SMALL)----*/
+    .row-sm{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+        height: max-content;
+    }
+
+    /*----COLUMN ELEMENT FOR TABLETS - (SMALL)----*/
+    .col-sm{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: max-content;
+        height: 100%;
+
+    }
+
+    /*----WIDTHS FOR TABLETS - (SMALL)----*/
+    .w-auto-sm {width: auto;}
+    .w-min-sm {width: min-content;}
+    .w-max-sm {width: max-content;}
+    .w-0-sm{width: 0;}
+    .w-1-sm{width: 8.3%;}
+    .w-2-sm{width: 16.7%;}
+    .w-3-sm{width: 25%;}
+    .w-4-sm{width: 33.3%;}
+    .w-5-sm{width: 41.7%;}
+    .w-6-sm{width: 50%;}
+    .w-7-sm{width: 58.3%;}
+    .w-8-sm{width: 66.7%;}
+    .w-9-sm{width: 75%;}
+    .w-10-sm {width: 83.3%;}
+    .w-11-sm {width: 91.7%;}
+    .w-12-sm {width: 100%;}
+
+    /*----HEIGHTS FOR TABLETS - (SMALL)----*/
+    .h-auto-sm {height: auto;}
+    .h-min-sm {height: min-content;}
+    .h-max-sm {height: max-content;}
+    .h-0-sm {height: 0;}
+    .h-1-sm {height: 8.3%;}
+    .h-2-sm {height: 16.7%;}
+    .h-3-sm {height: 25%;}
+    .h-4-sm {height: 33.3%;}
+    .h-5-sm {height: 41.7%;}
+    .h-6-sm {height: 50%;}
+    .h-7-sm {height: 58.3%;}
+    .h-8-sm {height: 66.7%;}
+    .h-9-sm {height: 75%;}
+    .h-10-sm {height: 83.3%;}
+    .h-11-sm {height: 91.7%;}
+    .h-12-sm {height: 100%;}
+
+    /*----JUSTIFY CONTENT FOR TABLETS - (SMALL)----*/
+    .j-start-sm {justify-content: flex-start;}
+    .j-center-sm {justify-content: center;}
+    .j-mend-sm {justify-content: flex-end;}
+    .j-mbetween-sm {justify-content: space-between;}
+    .j-maround-sm {justify-content: space-around;}
+    .j-mevenly-sm {justify-content: space-evenly;}
+
+    /*----ALIGN ITEMS FOR TABLETS - (SMALL)----*/
+    .a-start-sm {align-items: flex-start;}
+    .a-center-sm {align-items: center;}
+    .a-end-sm {align-items: flex-end;}
+    .a-stretch-sm {align-items: stretch;}
+    .a-baseline-sm{align-items: baseline;}
+
+    /*----ORDER OF DISPLAY ELEMENTS FOR TABLETS - (SMALL)----*/
+    .o-1-sm{order: 1;}
+    .o-2-sm{order: 2;}
+    .o-3-sm{order: 3;}
+    .o-4-sm{order: 4;}
+    .o-5-sm{order: 5;}
+    .o-6-sm{order: 6;}
+    .o-7-sm{order: 7;}
+    .o-8-sm{order: 8;}
+    .o-9-sm{order: 9;}
+    .o-10-sm{order: 10;}
+    .o-11-sm{order: 11;}
+    .o-12-sm{order: 12;}
+
+    /*----GAP BETWEEN ELEMENTS FOR TABLETS - (SMALL)----*/
+    .g-1-sm {gap: 5px;}
+    .g-2-sm {gap: 10px;}
+    .g-3-sm {gap: 15px;}
+    .g-4-sm {gap: 20px;}
+    .g-5-sm {gap: 25px;}
+    .g-6-sm {gap: 30px;}
+    .g-7-sm {gap: 35px;}
+    .g-8-sm {gap: 40px;}
+    .g-9-sm {gap: 45px;}
+    .g-10-sm {gap: 50px;}
+    .g-11-sm {gap: 55px;}
+    .g-12-sm {gap: 60px;}
+
+    /*----ELEMENTS MARGIN FOR TABLETS - (SMALL)----*/
+    .m-1-sm{margin: 8px;}
+    .m-2-sm{margin: 16px;}
+    .m-3-sm{margin: 24px;}
+    .m-4-sm{margin: 32px;}
+    .m-5-sm{margin: 40px;}
+    .m-6-sm{margin: 48px;}
+    .m-7-sm{margin: 56px;}
+    .m-8-sm{margin: 64px;}
+    .m-9-sm{margin: 72px;}
+    .m-10-sm{margin: 80px;}
+    .m-11-sm{margin: 88px;}
+    .m-12-sm{margin: 96px;}
+
+    /*----ELEMENTS PADDING FOR TABLETS - (SMALL)----*/
+    .p-1-sm {padding: 5px;}
+    .p-2-sm {padding: 10px;}
+    .p-3-sm {padding: 15px;}
+    .p-4-sm {padding: 20px;}
+    .p-5-sm {padding: 25px;}
+    .p-6-sm {padding: 30px;}
+    .p-7-sm {padding: 35px;}
+    .p-8-sm {padding: 40px;}
+    .p-9-sm {padding: 45px;}
+    .p-10-sm {padding: 50px;}
+    .p-11-sm {padding: 55px;}
+    .p-12-sm {padding: 60px;}
+
+    /*----LINE-HEIGHT FOR TABLETS - (SMALL)---*/
+
+    .lh1-sm {line-height: 15px;}
+    .lh2-sm{line-height: 20px;}
+    .lh3-sm{line-height: 25px;}
+    .lh4-sm{line-height: 35px;}
+    .lh5-sm{line-height: 45px;}
+
+}
+
+@media only screen and (min-width: 992px){
+    /*----FATHER ELEMENT FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .f-e-md{
+        display: block;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*----ROW ELEMENT FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .row-md{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+        height: max-content;
+    }
+
+    /*----COLUMN ELEMENT FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .col-md{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: max-content;
+        height: 100%;
+
+    }
+
+    /*----WIDTHS FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .w-auto-md {width: auto;}
+    .w-min-md {width: min-content;}
+    .w-max-md {width: max-content;}
+    .w-0-md{width: 0;}
+    .w-1-md{width: 8.3%;}
+    .w-2-md{width: 16.7%;}
+    .w-3-md{width: 25%;}
+    .w-4-md{width: 33.3%;}
+    .w-5-md{width: 41.7%;}
+    .w-6-md{width: 50%;}
+    .w-7-md{width: 58.3%;}
+    .w-8-md{width: 66.7%;}
+    .w-9-md{width: 75%;}
+    .w-10-md {width: 83.3%;}
+    .w-11-md {width: 91.7%;}
+    .w-12-md {width: 100%;}
+
+    /*----HEIGHTS FOR MOST LAPTOPS- (LARGE)----*/
+    .h-auto-md {height: auto;}
+    .h-min-md {height: min-content;}
+    .h-max-md {height: max-content;}
+    .h-0-md {height: 0;}
+    .h-1-md {height: 8.3%;}
+    .h-2-md {height: 16.7%;}
+    .h-3-md {height: 25%;}
+    .h-4-md {height: 33.3%;}
+    .h-5-md {height: 41.7%;}
+    .h-6-md {height: 50%;}
+    .h-7-md {height: 58.3%;}
+    .h-8-md {height: 66.7%;}
+    .h-9-md {height: 75%;}
+    .h-10-md {height: 83.3%;}
+    .h-11-md {height: 91.7%;}
+    .h-12-md {height: 100%;}
+
+    /*----JUSTIFY CONTENT FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .j-start-md {justify-content: flex-start;}
+    .j-center-md {justify-content: center;}
+    .j-mend-md {justify-content: flex-end;}
+    .j-mbetween-md {justify-content: space-between;}
+    .j-maround-md {justify-content: space-around;}
+    .j-mevenly-md {justify-content: space-evenly;}
+
+    /*----ALIGN ITEMS FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .a-start-md {align-items: flex-start;}
+    .a-center-md {align-items: center;}
+    .a-end-md {align-items: flex-end;}
+    .a-stretch-md {align-items: stretch;}
+    .a-baseline-md{align-items: baseline;}
+
+    /*----ORDER OF DISPLAY ELEMENTS FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .o-1-md{order: 1;}
+    .o-2-md{order: 2;}
+    .o-3-md{order: 3;}
+    .o-4-md{order: 4;}
+    .o-5-md{order: 5;}
+    .o-6-md{order: 6;}
+    .o-7-md{order: 7;}
+    .o-8-md{order: 8;}
+    .o-9-md{order: 9;}
+    .o-10-md{order: 10;}
+    .o-11-md{order: 11;}
+    .o-12-md{order: 12;}
+
+    /*----GAP BETWEEN ELEMENTS FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .g-1-md {gap: 5px;}
+    .g-2-md {gap: 10px;}
+    .g-3-md {gap: 15px;}
+    .g-4-md {gap: 20px;}
+    .g-5-md {gap: 25px;}
+    .g-6-md {gap: 30px;}
+    .g-7-md {gap: 35px;}
+    .g-8-md {gap: 40px;}
+    .g-9-md {gap: 45px;}
+    .g-10-md {gap: 50px;}
+    .g-11-md {gap: 55px;}
+    .g-12-md {gap: 60px;}
+
+    /*----ELEMENTS MARGIN FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .m-1-md{margin: 8px;}
+    .m-2-md{margin: 16px;}
+    .m-3-md{margin: 24px;}
+    .m-4-md{margin: 32px;}
+    .m-5-md{margin: 40px;}
+    .m-6-md{margin: 48px;}
+    .m-7-md{margin: 56px;}
+    .m-8-md{margin: 64px;}
+    .m-9-md{margin: 72px;}
+    .m-10-md{margin: 80px;}
+    .m-11-md{margin: 88px;}
+    .m-12-md{margin: 96px;}
+
+    /*----ELEMENTS PADDING FOR SMALL LAPTOPS - (MEDIUM)----*/
+    .p-1-md {padding: 5px;}
+    .p-2-md {padding: 10px;}
+    .p-3-md {padding: 15px;}
+    .p-4-md {padding: 20px;}
+    .p-5-md {padding: 25px;}
+    .p-6-md {padding: 30px;}
+    .p-7-md {padding: 35px;}
+    .p-8-md {padding: 40px;}
+    .p-9-md {padding: 45px;}
+    .p-10-md {padding: 50px;}
+    .p-11-md {padding: 55px;}
+    .p-12-md {padding: 60px;}
+
+    /*----LINE-HEIGHT FOR SMALL LAPTOPS - (MEDIUM)---*/
+
+    .lh1-md {line-height: 15px;}
+    .lh2-md{line-height: 20px;}
+    .lh3-md{line-height: 25px;}
+    .lh4-md{line-height: 35px;}
+    .lh5-md{line-height: 45px;}
+
+}
+
+@media only screen and (min-width: 1200px){
+    /*----FATHER ELEMENT FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .f-e-lg{
+        display: block;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /*----ROW ELEMENT FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .row-lg{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+        height: max-content;
+    }
+
+    /*----COLUMN ELEMENT FOR LAPTOPS AND DESKTOPS- (LARGE)----*/
+    .col-lg{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: max-content;
+        height: 100%;
+
+    }
+
+    /*----WIDTHS FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .w-auto-lg {width: auto;}
+    .w-min-lg {width: min-content;}
+    .w-max-lg {width: max-content;}
+    .w-0-lg{width: 0;}
+    .w-1-lg{width: 8.3%;}
+    .w-2-lg{width: 16.7%;}
+    .w-3-lg{width: 25%;}
+    .w-4-lg{width: 33.3%;}
+    .w-5-lg{width: 41.7%;}
+    .w-6-lg{width: 50%;}
+    .w-7-lg{width: 58.3%;}
+    .w-8-lg{width: 66.7%;}
+    .w-9-lg{width: 75%;}
+    .w-10-lg {width: 83.3%;}
+    .w-11-lg {width: 91.7%;}
+    .w-12-lg {width: 100%;}
+
+    /*----HEIGHTS FOR LAPTOPS AND DESKTOPS- (LARGE)----*/
+    .h-auto-lg {height: auto;}
+    .h-min-lg {height: min-content;}
+    .h-max-lg {height: max-content;}
+    .h-0-lg {height: 0;}
+    .h-1-lg {height: 8.3%;}
+    .h-2-lg {height: 16.7%;}
+    .h-3-lg {height: 25%;}
+    .h-4-lg {height: 33.3%;}
+    .h-5-lg {height: 41.7%;}
+    .h-6-lg {height: 50%;}
+    .h-7-lg {height: 58.3%;}
+    .h-8-lg {height: 66.7%;}
+    .h-9-lg {height: 75%;}
+    .h-10-lg {height: 83.3%;}
+    .h-11-lg {height: 91.7%;}
+    .h-12-lg {height: 100%;}
+
+    /*----JUSTIFY CONTENT FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .j-start-lg {justify-content: flex-start;}
+    .j-center-lg {justify-content: center;}
+    .j-mend-lg {justify-content: flex-end;}
+    .j-mbetween-lg {justify-content: space-between;}
+    .j-maround-lg {justify-content: space-around;}
+    .j-mevenly-lg {justify-content: space-evenly;}
+
+    /*----ALIGN ITEMS FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .a-start-lg {align-items: flex-start;}
+    .a-center-lg {align-items: center;}
+    .a-end-lg {align-items: flex-end;}
+    .a-stretch-lg {align-items: stretch;}
+    .a-baseline-lg{align-items: baseline;}
+
+    /*----ORDER OF DISPLAY ELEMENTS FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .o-1-lg{order: 1;}
+    .o-2-lg{order: 2;}
+    .o-3-lg{order: 3;}
+    .o-4-lg{order: 4;}
+    .o-5-lg{order: 5;}
+    .o-6-lg{order: 6;}
+    .o-7-lg{order: 7;}
+    .o-8-lg{order: 8;}
+    .o-9-lg{order: 9;}
+    .o-10-lg{order: 10;}
+    .o-11-lg{order: 11;}
+    .o-12-lg{order: 12;}
+
+    /*----GAP BETWEEN ELEMENTS FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .g-1-lg {gap: 5px;}
+    .g-2-lg {gap: 10px;}
+    .g-3-lg {gap: 15px;}
+    .g-4-lg {gap: 20px;}
+    .g-5-lg {gap: 25px;}
+    .g-6-lg {gap: 30px;}
+    .g-7-lg {gap: 35px;}
+    .g-8-lg {gap: 40px;}
+    .g-9-lg {gap: 45px;}
+    .g-10-lg {gap: 50px;}
+    .g-11-lg {gap: 55px;}
+    .g-12-lg {gap: 60px;}
+
+    /*----ELEMENTS MARGIN FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .m-1-lg{margin: 8px;}
+    .m-2-lg{margin: 16px;}
+    .m-3-lg{margin: 24px;}
+    .m-4-lg{margin: 32px;}
+    .m-5-lg{margin: 40px;}
+    .m-6-lg{margin: 48px;}
+    .m-7-lg{margin: 56px;}
+    .m-8-lg{margin: 64px;}
+    .m-9-lg{margin: 72px;}
+    .m-10-lg{margin: 80px;}
+    .m-11-lg{margin: 88px;}
+    .m-12-lg{margin: 96px;}
+
+    /*----ELEMENTS PADDING FOR LAPTOPS AND DESKTOPS - (LARGE)----*/
+    .p-1-lg {padding: 5px;}
+    .p-2-lg {padding: 10px;}
+    .p-3-lg {padding: 15px;}
+    .p-4-lg {padding: 20px;}
+    .p-5-lg {padding: 25px;}
+    .p-6-lg {padding: 30px;}
+    .p-7-lg {padding: 35px;}
+    .p-8-lg {padding: 40px;}
+    .p-9-lg {padding: 45px;}
+    .p-10-lg {padding: 50px;}
+    .p-11-lg {padding: 55px;}
+    .p-12-lg {padding: 60px;}
+
+    /*----LINE-HEIGHT FOR LAPTOPS AND DESKTOPS - (LARGE)---*/
+
+    .lh1-lg {line-height: 15px;}
+    .lh2-lg{line-height: 20px;}
+    .lh3-lg{line-height: 25px;}
+    .lh4-lg{line-height: 35px;}
+    .lh5-lg{line-height: 45px;}
+
+}
+
+
